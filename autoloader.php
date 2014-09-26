@@ -29,4 +29,4 @@ class Autoloader
     }
 }
 
-\NDB\Autoloader::init();
+\Dbw\Autoloader::init();
