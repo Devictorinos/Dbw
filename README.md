@@ -64,15 +64,21 @@ $db->select($sql, true);
 
 ------------------------------- For while loops -----------------------------------
 
-<strong>$row = $db->fetch()</strong>
+<pre>
+$db->select($sql);
+$row = $db->oFetch();
+</pre>
 
-<strong>$row = $db->oFetch()</strong>
 
-<strong>$row = $db->fetchClass('Class Name')</strong>
+<strong>$row = $db->fetch()</strong> // fetch assoc
 
-<strong>$row = $db->fetchIntoClass(new Class())</strong>
+<strong>$row = $db->oFetch()</strong> // fetch object
 
-<strong>$row = $db->fetchClassAfterConstr('Class Name')</strong>
+<strong>$row = $db->fetchClass('Class Name')</strong> //fetch class
+
+<strong>$row = $db->fetchIntoClass(new Class())</strong>// fetch into class
+
+<strong>$row = $db->fetchClassAfterConstr('Class Name')</strong> // fetch to class after constuctor
 
 
 ----------------------- Fetch All Without While Loops -------------------------------
@@ -89,6 +95,67 @@ $db->select($sql, true);
 
 <h2>Working with UPDATE method</h2>
 
-update method return affected rows count
+update method return affected rows count.
 
+In update method very important to set all where conditions like <b>where, whereIn, whereBetween</b> with number in the end of each condition. Here is an Example:
+
+<pre>
+
+$arr = [];
+$arr['titleOfCourtesy']   = "Mss.";
+
+
+$result = $db->update('Employees', $arr)
+             ->whereBetween1("EmployeeID", 2, 10)
+             ->where1("Country", "USA")
+             ->exec();
+
+</pre>
+
+
+<h3> WHERE Conditions </h3>
+
+As you can see, each where condition comes with number in the end.
+it's very important to setup where conditions with numbers, otherwise you will see errors.
+If you want to pass more than 1 where or whereIn or whereBetween, respectively you can add them with number increment like this :
+
+<pre>
+where1()->where2()->where3();
+</pre>
+also you can pass a separator, by default is <b>"="</b>
+To pass a differend separator just add third parameter to the where conditions like this :
+
+<pre>
+
+$arr = [];
+$arr['titleOfCourtesy']   = "Mss.";
+
+
+$result = $db->update('Employees', $arr)
+             ->where1("Date", "2014-09-28", ">") //in sql you will se this like : where date > "2014-09-28"
+             ->where2("Country", "USA", "<>")  //in sql you will se this like : where Countery <> "USA"
+             ->exec();
+
+</pre>
+
+
+<h3> exec() Method </h3> 
+
+exec method is executing the Query.
+You only need to add him to the end of all your where conditions, and if you want to debug your Query
+before execute, just pass - true in exec like this: 
+
+
+<pre>
+
+$arr = [];
+$arr['titleOfCourtesy']   = "Mss.";
+
+
+$result = $db->update('Employees', $arr)
+             ->where1("Date", "2014-09-28", ">") //in sql you will se this like : where date > "2014-09-28"
+             ->where2("Country", "USA", "<>")  //in sql you will se this like : where Countery <> "USA"
+             ->exec(true);
+
+</pre>
 
