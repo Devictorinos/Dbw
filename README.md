@@ -95,7 +95,8 @@ $row = $db->oFetch();
 
 <h2>Working with UPDATE method</h2>
 
-update method return affected rows count.
+
+update method expects two parameters, first - Table Name,  second associative array, and return affected rows count.
 
 In update method very important to set all where conditions like <b>where, whereIn, whereBetween</b> with number in the end of each condition. Here is an Example:
 
@@ -157,5 +158,67 @@ $result = $db->update('Employees', $arr)
              ->where2("Country", "USA", "<>")  //in sql you will se this like : where Country <> "USA"
              ->exec(true);
 
+</pre>
+
+<h2>Working with INSERT method</h2>
+
+insert method looks the same as Update, exclude where conditions, he simply doesn't have them
+insert method expects to parameters , first - Table Name ,  second associative array, and returning affected rows count. here is an example :
+
+<pre>
+$arr = [];
+$arr['FirstName']   = "Vivid";
+$arr['LastName']   = "Coches";
+$arr['BirthDate']   = date("Y-m-d H:i:s");
+
+$result2 = $db->insert('Employees', $arr);
+</pre>
+
+If you want to debug your query before execute it, just pass third parameter true
+<pre>
+insert('Employees', $arr, true);
+</pre>
+
+To get last insert id use <b>$db->getLastInsertId()</b>
+But always remember, when debug is on, lastInsertId throwing exception,because there are no executed query.
+here is an example :
+
+<pre>
+$arr = [];
+$arr['FirstName']   = "Vivid";
+$arr['LastName']   = "Coches";
+$arr['BirthDate']   = date("Y-m-d H:i:s");
+
+$result2 = $db->insert('Employees', $arr);
+$lastID =  $db->getLastInsertId();
+</pre>
+
+
+<h2>Working with DELETE method</h2>
+
+Delete method expects only table name, and then where conditions like in Update method. it's work in the same way as Update. 
+
+Returning count of deleted rows. 
+By default limit is set to one.
+
+here is an Example :
+
+<pre>
+ $result3 = $db->delete('Employees')->where1("EmployeeID", 34)->exec();
+</pre>
+
+For Debug just pass true in exec method
+
+<pre>
+ $result3 = $db->delete('Employees')->where1("EmployeeID", 34)->exec(true);
+</pre>
+
+If you want change limit, you can do this with this method <b>setLimit(54)</b>
+
+Here is an Example :
+
+<pre>
+ $db->setLimit(54);
+ $result3 = $db->delete('Employees')->where1("EmployeeID", 34)->exec(true);
 </pre>
 
