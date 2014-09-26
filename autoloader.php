@@ -1,6 +1,6 @@
 <?php
 
-namespace NDB;
+namespace Dbw;
 
 class Autoloader
 {
