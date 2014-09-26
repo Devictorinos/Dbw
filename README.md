@@ -56,7 +56,13 @@ $db->select($sql, true);
 
 </pre>
 <h3>Fetch Methods </h3>
+
+<!-- For While Loops -->
+<strong>$row = $db->fetch()</strong>
+<strong>$row = $db->oFetch()</strong>
+<strong>$row = $db->fetchClass('Class Name')</strong>
 <strong>$row = $db->FetchIntoClass(new Class())</strong>
-<strong>$row = $db->FetchIntoClass(new Class())</strong>
-<strong>$row = $db->FetchIntoClass(new Class())</strong>
-<strong>$row = $db->FetchIntoClass(new Class())</strong>
+<strong>$row = $db->fetchClassAfterConstr('Class Name')</strong>
+
+<!-- Fetch All Without While Loops -->
+
