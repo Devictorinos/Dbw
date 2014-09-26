@@ -70,7 +70,7 @@ $db->select($sql, true);
 
 <strong>$row = $db->fetchClass('Class Name')</strong>
 
-<strong>$row = $db->FetchIntoClass(new Class())</strong>
+<strong>$row = $db->fetchIntoClass(new Class())</strong>
 
 <strong>$row = $db->fetchClassAfterConstr('Class Name')</strong>
 
