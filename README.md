@@ -51,10 +51,15 @@ $sql = "SELECT EmployeeID, LastName, FirstName, BirthDate, Address, City, Region
         WHERE  EmployeeID IN (".$a.",".$b.",6,7)";
 
 $db->select($sql);
-// for activate debug before execute just add second parameter <strong>true</strong>
-$db->select($sql, true);
-
 </pre>
+
+<strong>for activate debug before execute just add second parameter - true</strong>
+
+<pre>
+$db->select($sql, true);
+</pre>
+
+
 <h3>Fetch Methods </h3>
 
 ------------------------------- For while loops -----------------------------------
