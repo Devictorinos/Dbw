@@ -86,3 +86,9 @@ $db->select($sql, true);
 <strong>$result = $db->fetchClassAllAfterConstr('Class Name')</strong>
 
 <strong>$result = $db->fetchAllIntoClass(new Class())</strong>
+
+<h2>Working with UPDATE method</h2>
+
+update method return affected rows count
+
+
