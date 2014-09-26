@@ -36,3 +36,27 @@ With default config:
 
 
 <strong>Letter R() represents Connection Type.</strong>
+
+
+<h2>Working with SELECT method</h2>
+
+<pre>
+
+$db = \DBWork\Dbw::R();
+
+$a = 1;
+$b = 2;
+
+$sql = "SELECT EmployeeID, LastName, FirstName, BirthDate, Address, City, Region FROM `Employees` 
+        WHERE  EmployeeID IN (".$a.",".$b.",6,7)";
+
+$db->select($sql);
+// for activate debug before execute just add second parameter <strong>true</strong>
+$db->select($sql, true);
+
+</pre>
+<h3>Fetch Methods </h3>
+<strong>$row = $db->FetchIntoClass(new Class())</strong>
+<strong>$row = $db->FetchIntoClass(new Class())</strong>
+<strong>$row = $db->FetchIntoClass(new Class())</strong>
+<strong>$row = $db->FetchIntoClass(new Class())</strong>
