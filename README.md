@@ -134,7 +134,7 @@ $arr['titleOfCourtesy']   = "Mss.";
 
 $result = $db->update('Employees', $arr)
              ->where1("Date", "2014-09-28", ">") //in sql you will se this like : where date > "2014-09-28"
-             ->where2("Country", "USA", "<>")  //in sql you will se this like : where Countery <> "USA"
+             ->where2("Country", "USA")  //in sql you will se this like : where Country "USA"
              ->exec();
 
 </pre>
