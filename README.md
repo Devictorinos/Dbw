@@ -1,12 +1,13 @@
-<strong>Dbw</strong> - it`s a FrameWork for work with data bases, based on <strong>PDO</strong> connection.
+<strong>Dbw</strong> - A FrameWork for working with databases, based on <strong>PDO</strong> connection.
 <strong>Dependencies - PHP 5.3.* >=</strong>.
 
-For now has capabilities to setup unlimmit connections types to one database or to several databases, also 
-setup database default connection settings inside class and override them if need, when calling the class.  
+For now has capabilities to setup unlimited connection types to one or several databases.
 
- It's very friendly with <strong>SQL</strong> methods like <strong>SELECT, INSERT, UPDATE, DELETE.</strong> and has method to convert ASCII chars after fetch, when working with hebrew data base
+It's also possible to setup default connection settings inside the class and override them if needed, when calling the class.
 
-More features comming soon :)
+It's very friendly with <strong>SQL</strong> methods like <strong>SELECT, INSERT, UPDATE, DELETE.</strong> and has method to convert ASCII chars after fetch, when working with hebrew data
+
+More features coming soon :)
 
 <div style="align:center;font-weight:bold;"><h1>Getting Started</h1></div>
 
