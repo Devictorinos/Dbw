@@ -5,7 +5,9 @@ For now has capabilities to setup unlimited connection types to one or several d
 
 It's also possible to setup default connection settings inside the class and override them if needed, when calling the class.
 
-It's very friendly with <strong>SQL</strong> methods like <strong>SELECT, INSERT, UPDATE, DELETE.</strong> and has method to convert ASCII chars after fetch, when working with hebrew data
+It's very friendly with <strong>SQL</strong> methods like <strong>SELECT, INSERT, UPDATE, DELETE.</strong>
+
+Also has a method to convert ASCII chars after fetch, when working with hebrew data.
 
 More features coming soon :)
 
